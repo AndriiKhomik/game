@@ -1,4 +1,4 @@
-const BASE_URL = "http://demo7919674.mockable.io/";
+const BASE_URL = "https://demo7919674.mockable.io/";
 
 export const getRequest = async () => {
   const res = await fetch(BASE_URL);

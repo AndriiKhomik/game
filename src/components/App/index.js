@@ -34,6 +34,7 @@ function Index() {
         setStart(false);
         return setSelectedItem(dataItem);
       }
+      return null;
     });
   };
 
@@ -65,15 +66,14 @@ function Index() {
           >
             {options}
           </Select>
-          <Button variant="contained" onClick={() => setStart(!start)}>
+          <Button
+            variant="contained"
+            onClick={() => setStart(!start)}
+            sx={{ minWidth: "96px" }}
+          >
             {start ? "Finish" : "Start"}
           </Button>
-          <Button
-            variant="outlined"
-            color="error"
-            onClick={handleReset}
-            sx={{ minWidth: "72px" }}
-          >
+          <Button variant="outlined" color="error" onClick={handleReset}>
             Reset
           </Button>
         </Stack>
