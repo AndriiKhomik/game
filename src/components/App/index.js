@@ -19,12 +19,14 @@ function Index() {
 
   useEffect(() => {
     getRequest().then((data) => setData(data));
+    return () => setData([]);
   }, []);
 
   useEffect(() => {
     if (data) {
       setSelectedItem(data[0]);
     }
+    return () => setSelectedItem(null);
   }, [data]);
 
   const handleChange = (e) => {
