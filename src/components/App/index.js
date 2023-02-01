@@ -55,7 +55,7 @@ function Index() {
 
   return (
     <Grid container>
-      <Grid m={4}>
+      <Grid m={3}>
         <Stack spacing={3} direction="row" justifyContent="flex-start">
           <Select
             id="level"
@@ -84,8 +84,8 @@ function Index() {
           hoverSquares={hoverSquares}
         />
       </Grid>
-      <Grid>
-        <Typography variant="h4" marginY={4}>
+      <Grid m={3}>
+        <Typography variant="h4" mb={4} mt={1}>
           Hover Squares
         </Typography>
         <Stack spacing={1}>
