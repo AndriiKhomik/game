@@ -6,5 +6,5 @@ export const getRequest = async () => {
   if (!res.ok) {
     throw new Error(`Could not fetch ${BASE_URL}, received ${res.status}`);
   }
-  return await res.json();
+  return res.json();
 };
