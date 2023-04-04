@@ -10,7 +10,6 @@ import {
   Typography,
 } from "@mui/material";
 import GridBoard from "../GridBoard";
-import Testing from "../Testing";
 
 function Index() {
   const [data, setData] = useState(null);
