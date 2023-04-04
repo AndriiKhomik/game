@@ -10,6 +10,7 @@ import {
   Typography,
 } from "@mui/material";
 import GridBoard from "../GridBoard";
+import Testing from "../Testing";
 
 function Index() {
   const [data, setData] = useState(null);
@@ -56,49 +57,51 @@ function Index() {
     });
 
   return (
-    <Grid container>
-      <Grid m={3}>
-        <Stack spacing={3} direction="row" justifyContent="flex-start">
-          <Select
-            id="level"
-            labelId="level"
-            value={selectedItem?.name || ""}
-            onChange={handleChange}
-            sx={{ minWidth: "200px" }}
-          >
-            {options}
-          </Select>
-          <Button
-            variant="contained"
-            onClick={() => setStart(!start)}
-            sx={{ minWidth: "96px" }}
-          >
-            {start ? "Finish" : "Start"}
-          </Button>
-          <Button variant="outlined" color="error" onClick={handleReset}>
-            Reset
-          </Button>
-        </Stack>
-        <GridBoard
-          quantity={selectedItem?.field}
-          start={start}
-          setHoverSquares={setHoverSquares}
-          hoverSquares={hoverSquares}
-        />
+    <>
+      <Grid container>
+        <Grid m={3}>
+          <Stack spacing={3} direction="row" justifyContent="flex-start">
+            <Select
+              id="level"
+              labelId="level"
+              value={selectedItem?.name || ""}
+              onChange={handleChange}
+              sx={{ minWidth: "200px" }}
+            >
+              {options}
+            </Select>
+            <Button
+              variant="contained"
+              onClick={() => setStart(!start)}
+              sx={{ minWidth: "96px" }}
+            >
+              {start ? "Finish" : "Start"}
+            </Button>
+            <Button variant="outlined" color="error" onClick={handleReset}>
+              Reset
+            </Button>
+          </Stack>
+          <GridBoard
+            quantity={selectedItem?.field}
+            start={start}
+            setHoverSquares={setHoverSquares}
+            hoverSquares={hoverSquares}
+          />
+        </Grid>
+        <Grid m={3}>
+          <Typography variant="h4" mb={4} mt={1}>
+            Hover Squares
+          </Typography>
+          <Stack spacing={1}>
+            {hoverSquares.map((hoverSquare) => (
+              <Alert icon={false} key={hoverSquare} severity="warning">
+                {hoverSquare}
+              </Alert>
+            ))}
+          </Stack>
+        </Grid>
       </Grid>
-      <Grid m={3}>
-        <Typography variant="h4" mb={4} mt={1}>
-          Hover Squares
-        </Typography>
-        <Stack spacing={1}>
-          {hoverSquares.map((hoverSquare) => (
-            <Alert icon={false} key={hoverSquare} severity="warning">
-              {hoverSquare}
-            </Alert>
-          ))}
-        </Stack>
-      </Grid>
-    </Grid>
+    </>
   );
 }
 

@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Easy",
+    "field": 5,
+    "id": "1"
+  },
+  {
+    "name": "Normal",
+    "field": 10,
+    "id": "2"
+  },
+  {
+    "name": "Hard",
+    "field": 15,
+    "id": "3"
+  }
+]
